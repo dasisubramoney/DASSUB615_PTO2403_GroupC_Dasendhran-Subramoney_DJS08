@@ -1,16 +1,23 @@
 import React from "react"
 import { Link, useSearchParams } from "react-router-dom"
+import { getVans } from "../../api"
+
 
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vans, setVans] = React.useState([])
+    const [loading, setLoading] = React.useState(false)
+
 
     const typeFilter = searchParams.get("type")
 
     React.useEffect(() => {
-        fetch("/api/vans")
-            .then(res => res.json())
-            .then(data => setVans(data.vans))
+        async function loadVans() {
+            const data = await getVans()
+            setVans(data)
+        }
+        
+        loadVans()
     }, [])
 
     const displayedVans = typeFilter
@@ -21,7 +28,10 @@ export default function Vans() {
         <div key={van.id} className="van-tile">
             <Link 
                 to={van.id} 
-                state={{ search: `?${searchParams.toString()}` }}
+                state={{ 
+                    search: `?${searchParams.toString()}`, 
+                    type: typeFilter 
+                }}
             >
                 <img src={van.imageUrl} />
                 <div className="van-info">
