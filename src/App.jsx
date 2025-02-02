@@ -19,10 +19,30 @@ import Layout from "./components/Layout"
 import HostLayout from "./components/HostLayout"
 import AuthRequired from "./Components/AuthRequired"
 
+//Question 1
+//React Router enables navigation in React applications. 
+// It allows developers to create single-page applications where users can move between different views without forcing the full page to reload. 
+
+//Question 1
+// To setup a react router you first have to install the papckage of dependencies
+// and warp the entire project in browserrouter in your app.js
+
+////Question 1
+// Routes acts as a container for all route 
+// Route defines individual paths with their corresponding components
+
 import "./Server"
 
 function App() {
 
+
+  // Question 2 
+  //Nested routes allow components to have sub-routes that run within parent components. 
+  //Is a way to organize and structure application routes
+
+  // Benefits 
+  //Better Component Organization
+  //Parent components can share layouts and navigation bars
 
   return (
     <BrowserRouter>

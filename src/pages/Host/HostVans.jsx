@@ -38,6 +38,15 @@ export default function HostVanDetail() {
         color: "#161616"
     }
 
+    //Question 3
+    //It allows users to move between different views or pages without triggering a full page reload, 
+    //which provides a faster and smoother user experience.
+    //It updates the URL without reloading the page
+
+    //Question 3
+    // NavLink adds styling to the active link.
+    // The difference of link to navlink is link you can not add styling 
+
     return (
         <section>
             <Link

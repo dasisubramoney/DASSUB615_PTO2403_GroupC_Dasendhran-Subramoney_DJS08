@@ -2,6 +2,9 @@ import React from "react"
 import { Link, useParams, useLocation } from "react-router-dom"
 import { getVans } from "../../api"
 
+//Question 2 
+// Route parameters allow values in the URL, which can be accessed between components using useParams().
+
 export default function VanDetail() {
     const [van, setVan] = React.useState(null)
     const [loading, setLoading] = React.useState(false)

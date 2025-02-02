@@ -2,6 +2,10 @@ import React from "react"
 import { Link, useSearchParams } from "react-router-dom"
 import { getVans } from "../../api"
 
+//Question 3 
+// Search parameters are a way to pass data via the URL without affecting the app's route structure. 
+// The useSearchParams hook allows you to read and update these parameters by making it useful for filtering content in real-time.
+
 export default function Vans() {
     // Manage search parameters for filtering vans
     const [searchParams, setSearchParams] = useSearchParams()
@@ -38,7 +42,7 @@ export default function Vans() {
         ? vans.filter(van => van.type === typeFilter)
         : vans
 
-    // Generate JSX for each van
+    
     const vanElements = displayedVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link 
